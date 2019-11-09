@@ -1,0 +1,15 @@
+version: '2'
+services:
+  mongodb:
+    image: nationalparks.azurecr.io/demo/mongodb
+    environment:
+      HAB_MONGODB: "[mongod.net]\nbind_ip = '0.0.0.0'\n[mongod.security]\ncluster_auth_mode = ''" 
+      HAB_LICENSE: "accept-no-persist"
+  national-parks:
+    image: nationalparks.azurecr.io/demo/national-parks
+    environment:
+      HAB_LICENSE: "accept-no-persist"
+    command: --peer mongodb --bind database:mongodb.default
+        ports:
+         - 8085:80
+         - 9631:9631

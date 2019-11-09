@@ -1,0 +1,20 @@
+---
+apiVersion: habitat.sh/v1beta1
+kind: Habitat
+customVersion: v1beta2
+metadata:
+  ## Name of the Kubernetes resource.
+  name: {{.Values.metadataName}}
+spec:
+  v1beta2:
+    ## Name of the Habitat service package exported as a Docker image.
+    image: {{.Values.imageName}}
+    ## Number of desired instances.
+    count: {{.Values.instanceCount}}
+    ## An object containing parameters that affects how the Habitat service
+    ## is executed.
+    service:
+      ## Name of the Habitat service.
+      name: {{.Values.serviceName}}
+      ## Habitat topology of the service.
+      topology: {{.Values.serviceTopology}}

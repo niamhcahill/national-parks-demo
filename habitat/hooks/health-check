@@ -1,0 +1,12 @@
+#!/bin/sh
+ 
+curl -Is http://localhost:8080 > /dev/null 2>&1
+
+case $? in
+  0)
+    rc=0 ;;
+  *)
+    rc=3 ;;
+esac
+ 
+exit $rc

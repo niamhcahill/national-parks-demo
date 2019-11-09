@@ -1,0 +1,5 @@
+metadataName: "national-parks-7-0-8-20191014144712"
+serviceName: "national-parks"
+imageName: "nc-np/national-parks:7.0.8-20191014144712"
+instanceCount: "1"
+serviceTopology: "standalone"
